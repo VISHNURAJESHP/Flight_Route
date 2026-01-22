@@ -75,7 +75,7 @@ Flight_Route/
 
   <h3>1. Clone the Repository</h3>
     <pre>
-git clone &lt;repository-url&gt;
+git clone https://github.com/VISHNURAJESHP/Flight_Route.git
 cd Flight_Route
     </pre>
 
@@ -154,3 +154,4 @@ python manage.py runserver
 
 </body>
 </html>
+
