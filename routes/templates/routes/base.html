@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Routes System</title>
+    <link rel="stylesheet" href="{% static 'routes/style.css' %}">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="/add/">Add Route</a>
+    <a href="/nth/">Nth Node</a>
+    <a href="/longest/">Longest Route</a>
+    <a href="/shortest/">Shortest Route</a>
+</div>
+
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>

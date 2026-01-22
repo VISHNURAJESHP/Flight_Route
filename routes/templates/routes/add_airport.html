@@ -1,0 +1,49 @@
+{% extends 'routes/base.html' %}
+
+{% block content %}
+<div style="max-width: 500px; margin: 40px auto;">
+    <h2>Add Airport Route</h2>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <!-- Parent Airport -->
+        <div style="margin-bottom: 15px;">
+            <label for="{{ form.parent_airport.id_for_label }}">
+                Parent Airport
+            </label><br>
+            {{ form.parent_airport }}
+            <small>Select an airport to attach this route to (optional for root)</small>
+        </div>
+
+        <!-- Left / Right -->
+        <div style="margin-bottom: 15px;">
+            <label for="{{ form.position.id_for_label }}">
+                Position
+            </label><br>
+            {{ form.position }}
+            <small>Choose whether this airport is left or right of parent</small>
+        </div>
+
+        <!-- Airport Code -->
+        <div style="margin-bottom: 15px;">
+            <label for="{{ form.airport_code.id_for_label }}">
+                New Airport Code
+            </label><br>
+            {{ form.airport_code }}
+        </div>
+
+        <!-- Duration -->
+        <div style="margin-bottom: 20px;">
+            <label for="{{ form.duration.id_for_label }}">
+                Duration (minutes)
+            </label><br>
+            {{ form.duration }}
+        </div>
+
+        <button type="submit">
+            Add Airport Route
+        </button>
+    </form>
+</div>
+{% endblock %}

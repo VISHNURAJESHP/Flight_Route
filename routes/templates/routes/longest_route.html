@@ -1,0 +1,35 @@
+{% extends "routes/base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">
+    Airport with Highest Duration
+    </h2>
+
+    {% if longest %}
+        <div class="card shadow p-4 text-center">
+
+            <h4 class="mb-3">
+                Airport Code
+            </h4>
+            <p class="fs-3 fw-bold">
+                {{ longest.airport_code }}
+            </p>
+
+            <h4 class="mt-4 mb-3">
+                Duration
+            </h4>
+            <p class="fs-3 text-primary fw-bold">
+                {{ longest.duration }} Km
+            </p>
+
+        </div>
+    {% else %}
+        <div class="alert alert-warning text-center">
+            No airport data available.
+        </div>
+    {% endif %}
+
+</div>
+{% endblock %}

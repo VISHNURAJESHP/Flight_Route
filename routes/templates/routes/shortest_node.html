@@ -1,0 +1,35 @@
+{% extends 'routes/base.html' %}
+
+{% block content %}
+<div class="container mt-10">
+
+    <h2 class="text-center mb-4">
+    Shortest Route Between Two Airports
+    </h2>
+
+    {% if shortest %}
+        <div class="card shadow p-4 text-center">
+
+            <p class="fs-5">
+                <strong>From Airport:</strong>
+                {{ shortest.parent.airport_code }}
+            </p>
+
+            <p class="fs-5">
+                <strong>To Airport:</strong>
+                {{ shortest.airport_code }}
+            </p>
+
+            <p class="fs-4 text-success fw-bold mt-3">
+                Duration: {{ shortest.duration }} Km
+            </p>
+
+        </div>
+    {% else %}
+        <div class="alert alert-warning text-center">
+            No routes available between airports.
+        </div>
+    {% endif %}
+
+</div>
+{% endblock %}
